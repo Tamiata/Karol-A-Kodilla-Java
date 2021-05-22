@@ -31,8 +31,6 @@ public class CollectionTestSuite {
         OddNumbersExterminator m = new OddNumbersExterminator();
         List<Integer> result = m.exterminate(emptyList);
 
-        System.out.println(emptyList);
-        System.out.println(expectedResult);
         Assertions.assertEquals(expectedResult, result);
     }
     @Test
@@ -50,8 +48,7 @@ public class CollectionTestSuite {
         expectedResult.add(18);
 
         OddNumbersExterminator n = new OddNumbersExterminator();
-        List<Integer> result = new LinkedList<>();
-        result = n.exterminate(list);
+        List<Integer> result = n.exterminate(list);
 
         Assertions.assertEquals(expectedResult, result);
 
