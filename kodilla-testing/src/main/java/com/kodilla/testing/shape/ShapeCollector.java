@@ -23,7 +23,8 @@ public class ShapeCollector {
 
     }
 
-    public void getShapesQuantity() {
+    public int getShapesQuantity() {
+        return 1;
     }
 
 }
