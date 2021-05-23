@@ -87,8 +87,28 @@ public class ShapeCollectorTestSuite {
             @Test
             void TestAddFigure() {
                 Circle circle = new Circle(5);
-                ShapeCollector shapeCollector = new ShapeCollector();
-                shapeCollector.addFigure(circle);
+                ShapeCollector sC = new ShapeCollector();
+                sC.addFigure(circle);
+                Assertions.assertEquals(1,sC.getShapesQuantity());
             }
+            @Test
+            void TestGetFigure() {
+                Triangle triangle = new Triangle(3,5);
+                ShapeCollector sC = new ShapeCollector();
+                sC.addFigure(triangle);
+                sC.getFigure(0);
+                boolean result = sC.getFigure(0) instanceof Shape;
+                Assertions.assertEquals(true,result);
+            }
+
+            @Test
+            void TestRemoveFigure() {
+                Circle circle = new Circle(5);
+                ShapeCollector sC = new ShapeCollector();
+                sC.addFigure(circle);
+                sC.removeFigure(0);
+                Assertions.assertEquals(0,sC.getShapesQuantity());
+            }
+
         }
     }

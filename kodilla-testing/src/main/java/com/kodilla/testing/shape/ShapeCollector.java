@@ -22,4 +22,8 @@ public class ShapeCollector {
     public void showFigures() {
 
     }
+
+    public void getShapesQuantity() {
+    }
+
 }
