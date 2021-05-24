@@ -17,18 +17,17 @@ public class ShapeCollectorTestSuite {
         class TestForShapes {
 
             @Test
-            void testSquareName() {
+            void testShapeName() {
                 //Given
                 Shape shape = new Square(5);
                 //When
                 String expectedResult = "Square";
-
                 //Then
                 Assertions.assertEquals(expectedResult, shape.getShapeName());
             }
 
             @Test
-            void testSquareField() {
+            void testShapeField() {
                 //Given
                 Shape shape = new Square(5);
                 //When
@@ -36,48 +35,6 @@ public class ShapeCollectorTestSuite {
                 //Then
                 Assertions.assertEquals(expectedResult, shape.getField());
             }
-
-            @Test
-            void testCircleName() {
-                //Given
-                Shape shape = new Circle(3);
-                //When
-                String expectedResult = "Circle";
-                //Then
-                Assertions.assertEquals(expectedResult, shape.getShapeName());
-            }
-
-            @Test
-            void testCircleField() {
-                //Given
-                Shape shape = new Circle(3);
-                //When
-                double expectedResult = Math.PI * 3 * 3;
-                //Then
-                Assertions.assertEquals(expectedResult, shape.getField());
-            }
-
-            @Test
-            void testTriangleleName() {
-                //Given
-                Shape shape = new Triangle(3, 4);
-                //When
-                String expectedResult = "Triangle";
-                //Then
-                Assertions.assertEquals(expectedResult, shape.getShapeName());
-            }
-
-            @Test
-            void testTriangleField() {
-                //Given
-                Shape shape = new Triangle(3, 4);
-                //When
-                double expectedResult = (3 * 4) / 2;
-                //Then
-                Assertions.assertEquals(expectedResult, shape.getField());
-            }
-
-
         }
         @Nested
         @DisplayName("Test for shape collection")
@@ -91,7 +48,7 @@ public class ShapeCollectorTestSuite {
                 sC.addFigure(circle);
                 Assertions.assertEquals(1,sC.getShapesQuantity());
             }
-          /*  @Test
+            @Test
             void TestGetFigure() {
                 Triangle triangle = new Triangle(3,5);
                 ShapeCollector sC = new ShapeCollector();
@@ -99,7 +56,7 @@ public class ShapeCollectorTestSuite {
                 sC.getFigure(0);
                 boolean result = sC.getFigure(0) instanceof Shape;
                 Assertions.assertEquals(true,result);
-            }*/
+            }
 
             @Test
             void TestRemoveFigure() {
@@ -108,6 +65,15 @@ public class ShapeCollectorTestSuite {
                 sC.addFigure(circle);
                 sC.removeFigure(circle);
                 Assertions.assertEquals(0,sC.getShapesQuantity());
+            }
+
+            @Test
+            void TestShowFigures() {
+                Square square = new Square(5);
+                ShapeCollector sC = new ShapeCollector();
+                sC.addFigure(square);
+                Assertions.assertEquals("Square", sC.showFigures());
+
             }
 
         }
