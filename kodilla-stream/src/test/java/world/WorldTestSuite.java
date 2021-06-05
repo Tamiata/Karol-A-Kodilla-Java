@@ -5,9 +5,8 @@ import com.kodilla.stream.world.Country;
 import com.kodilla.stream.world.World;
 import org.junit.jupiter.api.Test;
 
-import javax.sound.midi.Soundbank;
 import java.math.BigDecimal;
-import java.util.stream.*;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
