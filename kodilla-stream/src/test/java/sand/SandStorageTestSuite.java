@@ -47,6 +47,7 @@ public class SandStorageTestSuite {
                 .map(SandStorage::getSandBeansQuantity)
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
 
+        System.out.println(totalSand);
 
     }
 
